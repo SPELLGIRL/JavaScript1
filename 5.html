@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+
+  "use strict";
+
+  let number = parseInt(prompt("Введите номер своего билета: ")),
+    n1 = number % 10,
+    n2 = Math.floor(number / 10) % 10,
+    n3 = Math.floor(number / 100) % 10,
+    n4 = Math.floor(number / 1000) % 10,
+    n5 = Math.floor(number / 10000) % 10,
+    n6 = Math.floor(number / 100000) % 10,
+    message = "Вам не повезло";
+
+  if (n1 + n2 + n3 === n4 + n5 + n6) {
+    message = "Вы выиграли!Вам достался счастливый билет!";
+  }
+
+  console.log(message);
+
+</script>
