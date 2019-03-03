@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<script>
+
+  'use strict';
+
+  /*
+  4. Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+  параметрами. Обязательно использовать оператор return.
+   */
+  /**
+   * Вычисление суммы чисел.
+   * @param {number} a первое слагаемое
+   * @param {number} b второе слагаемое
+   * @returns {number} Возвращает число,если переданы два числа
+   */
+  function add(a, b) {
+    return a + b;
+  }
+
+  /**
+   * Вычисление разности чисел
+   * @param {number} a уменьшаемое (первый параметр)
+   * @param {number} b вычитаемое (второй параметр)
+   * @returns {number} Возвращает разность чисел
+   */
+  function reduce(a, b) {
+    return a - b;
+  }
+
+  /**
+   * Вычисление частного (деление чисел)
+   * @param {number} a делимое
+   * @param {number} b делитель
+   * @returns {number} Возвращает частное от деления двух чисел
+   */
+  function divide(a, b) {
+    return a / b;
+  }
+
+  /**
+   * Вычисление произведения (умножение чисел)
+   * @param {number} a первый множитель
+   * @param {number} b второй множитель
+   * @returns {number} Возвращает произведение чисел
+   */
+  function multiply(a, b) {
+    return a * b;
+  }
+
+  console.log(add(4, 8)); //12
+  console.log(reduce(9, 7)); //2
+  console.log(divide(20, 4)); // 5
+  console.log(multiply(11, 13)); // 143
+
+</script>
