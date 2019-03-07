@@ -1,0 +1,66 @@
+<meta charset="UTF-8">
+<script>
+  "use strict";
+
+  /*
+  5*. Дан массив (создать такой же, с такими же значениями):
+ ```
+const arr = [
+[2, 4, 6],
+[1, 5, 10],
+[7, 4, 1],
+];
+```
+  Задания:
+    1 Найти массив, у которого сумма всех чисел максимальна, вывести в console.log
+  индекс этого массива.
+  2 Получить и вывести в console.log минимальное значение найденное в массиве,
+    который мы получили в первом пункте
+    */
+  //Задание 1:
+  const arr = [
+    [2, 4, 6],
+    [1, 5, 10],
+    [7, 4, 1],
+  ];
+
+  let maxSumIdx = 0;
+  let maxSumArray = getSumElements(arr[maxSumIdx]);
+
+  for (let i = 1; i < arr.length; i++) {
+    const sumElements = getSumElements(arr[i]);
+    if (sumElements > maxSumArray) {
+      maxSumArray = sumElements;
+      maxSumIdx = i;
+    }
+  }
+
+  console.log(`Индекс массива с максимальной суммой элементов  равен ${maxSumIdx}`);
+
+  /**
+   * Считает сумму элементов массива
+   * @param {number[]} arr массив, сумму элементов которого считает функция
+   * @returns {number} sum Сумма элементов массива
+   */
+  function getSumElements(arr) {
+    let sum = 0;
+    for (const val of arr) {
+      sum += val;
+    }
+    return sum;
+  }
+
+  //Задание 2:
+  const arr2 = arr[maxSumIdx];
+
+  let minNumber = arr2[0];
+
+  for (let i = 1; i < arr2.length; i++) {
+    if (arr2[i] < minNumber) {
+      minNumber = arr2[i];
+    }
+  }
+
+  console.log(`Минимальное значение в найденном массиве равно ${minNumber}`)
+
+</script>
