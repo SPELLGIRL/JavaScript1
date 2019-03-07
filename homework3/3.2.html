@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script>
+	"use strict";
+	
+/*
+3.Нарисовать горку с помощью console.log (используя цикл for), как показано на
+рисунке, только у вашей горки должно быть 20 рядов, а не 5:
+```
+x
+xxx
+xxxxx
+xxxxxxx
+xxxxxxxxx
+```
+*/
+let mount = '';
+for (let i= 0; i < 20; i++){
+	mount+='x'
+	for (let j = 0; j < i; j++){
+		mount += 'xx';
+	}
+	mount+='\n';
+}
+console.log(mount);
+
+</script>

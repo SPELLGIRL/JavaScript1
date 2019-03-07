@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script>
+	"use strict";
+	
+/*
+4*. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+(можно без оптимизаций).
+*/
+	
+/**
+ * Проверяет является ли число простым.
+ *@param {int} number Проверяемое число.
+ *@returns {boolean} Если число простое возвращает true, в остальных случаях - false.
+ */ 
+function PrimeNumber(number) {
+	if (number < 2) {
+		return false;
+}
+	for (let i = 2; i <= Math.sqrt(number); i++) {
+		if (number % i ===0) {
+			return false;
+		}
+	}
+	
+	return true;
+}	
+
+</script>
