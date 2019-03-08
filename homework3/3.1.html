@@ -13,14 +13,7 @@
     xxxxxxxxx
     ```
     */
-    let mount = '';
-    for (let i = 0; i < 20; i++) {
-        mount += 'x';
-        for (let j = 0; j < i; j++) {
-            mount += 'xx';
-        }
-        mount += '\n';
+    let x = 'x';
+    for (let i = 20; i--; console.log(x), x = x + 'xx') {
     }
-    console.log(mount);
-
 </script>
