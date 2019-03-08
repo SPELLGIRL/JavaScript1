@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+    "use strict";
+
+    /*
+    4*. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+    (можно без оптимизаций).
+    */
+    let i = 2, n = +prompt('Введите число, до которого будет произведена выборка простых чисел: ');
+    let result = [false, false];
+    while (i <= n) {
+        result[i++] = true;
+    }
+    for (let i = 2; i <= n; i++) {
+        if (result[i] === true) {
+            console.log(i);
+            for (let j = i * i; j <= n; j += i) {
+                result[j] = false;
+            }
+        }
+    }
+
+</script>
