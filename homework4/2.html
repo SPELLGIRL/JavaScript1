@@ -130,7 +130,6 @@
                 }
 
                 const nextStep = this.player.getNextPosition(direction);
-                console.log(nextStep);
                 if (this.canPlayerMakeStep(nextStep)) {
                     // Двигаем игрока.
                     this.player.move(nextStep);
