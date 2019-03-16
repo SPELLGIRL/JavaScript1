@@ -159,7 +159,7 @@ const form = {
         lvl.remove('is-valid');
         lvl.add('is-invalid');
 
-        let hint = inputElement.parentNode.querySelector('.invalid-feedback');
+        let hint = inputElement.parentElement.querySelector('.invalid-feedback');
         if (!hint) {
             hint = document.createElement('div');
             hint.classList.add('invalid-feedback');
