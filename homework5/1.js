@@ -44,7 +44,7 @@ const chess = {
         if (rowNum === 0 || rowNum === 9 || colNum === 0 || colNum === 9) {
             return false;
         }
-        return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
+        return (rowNum % 2 + colNum % 2) === 1;
     }
 };
 
