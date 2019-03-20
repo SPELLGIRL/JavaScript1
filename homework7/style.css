@@ -44,3 +44,12 @@ td.cell{
 .disabled:hover{
     background: #7c7c7c;
 }
+
+#game-score {
+    margin-top: 15px;
+    text-align: center;
+    font-family: "Arial", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: red;
+}

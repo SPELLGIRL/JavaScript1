@@ -311,6 +311,47 @@ const food = {
 };
 
 /**
+ * Объект - счет игры.
+ * @property {int} count
+ * @property {HTMLElement} countElement DOM-элемент для отображения количества очков.
+ */
+const score = {
+    count: null,
+    countElement: null,
+
+    /**
+     * Инициализирует счетчик.
+     */
+    init() {
+        this.countElement = document.getElementById("score-count");
+        this.drop();
+    },
+
+    /**
+     * Инкрементирует счетчик.
+     */
+    increment() {
+        this.count++;
+        this.render();
+    },
+
+    /**
+     * Сброс счетчика.
+     */
+    drop() {
+        this.count = 0;
+        this.render();
+    },
+
+    /**
+     * Отображение очков игрока.
+     */
+    render() {
+        this.countElement.textContent = this.count.toString();
+    }
+};
+
+/**
  * Статус игры.
  * @property {string} condition Статус игры.
  */
@@ -362,6 +403,7 @@ const status = {
  * @property {snake} snake Объект змейки.
  * @property {food} food Объект еды.
  * @property {status} status Статус игры.
+ * @property {score} score Счетчик игры.
  * @property {int} tickInterval Номер интервала игры.
  */
 const game = {
@@ -370,6 +412,7 @@ const game = {
     snake,
     food,
     status,
+    score,
     tickInterval: null,
 
     /**
@@ -390,6 +433,8 @@ const game = {
         }
         // Инициализируем карту.
         this.map.init(this.config.getRowsCount(), this.config.getColsCount());
+        //Инициализируем счетчик.
+        this.score.init();
         // Устанавливаем обработчики событий.
         this.setEventHandlers();
         // Ставим игру в начальное положение.
@@ -402,6 +447,8 @@ const game = {
     reset() {
         // Ставим статус игры в "остановлена".
         this.stop();
+        //Сбрасываем счетчик.
+        this.score.drop();
         // Инициализируем змейку.
         this.snake.init(this.getStartSnakeBody(), 'up');
         // Ставим еду на карту в случайную пустую ячейку.
@@ -458,6 +505,8 @@ const game = {
         if (this.food.isOnPoint(this.snake.getNextStepHeadPoint())) {
             // Прибавляем к змейке ячейку.
             this.snake.growUp();
+            //Инкрементируем счетчик.
+            this.score.increment();
             // Ставим еду в свободную ячейку.
             this.food.setCoordinates(this.getRandomFreeCoordinates());
             // Если выиграли, завершаем игру.
